@@ -2,7 +2,7 @@
 import RPi.GPIO as GPIO
 
 LedPin = 11    # pin11 --- led
-BtnPin = 12    # pin12 --- button
+BtnPin = 18    # pin18 --- button
 
 def setup():
 	GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
@@ -13,10 +13,8 @@ def setup():
 def loop():
 	while True:
 		if GPIO.input(BtnPin) == GPIO.LOW: # Check whether the button is pressed or not.
-			print '...led on'
 			GPIO.output(LedPin, GPIO.LOW)  # led on
 		else:
-			print 'led off...'
 			GPIO.output(LedPin, GPIO.HIGH) # led off
 
 def destroy():

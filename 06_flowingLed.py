@@ -14,7 +14,7 @@ def loop():
 	while True:
 		for pin in pins:
 			GPIO.output(pin, GPIO.LOW)	
-			time.sleep(0.5)
+			time.sleep(0.05)
 			GPIO.output(pin, GPIO.HIGH)
 
 def destroy():

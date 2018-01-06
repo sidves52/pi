@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 import RPi.GPIO as GPIO
 import time
+import sys
 
-RelayPin = 11    # pin11
+RelayPin = 12    # pin11
 
 def setup():
 	GPIO.setmode(GPIO.BOARD)         # Numbers pins by physical location
@@ -10,13 +11,16 @@ def setup():
 	GPIO.output(RelayPin, GPIO.HIGH)
 
 def loop():
+	print 'high'
 	while True:
-		print '...clsoe'
+		time.sleep(0.5)
+		print 'low'
+		sys.stdout.flush()
 		GPIO.output(RelayPin, GPIO.LOW)
 		time.sleep(0.5)
-		print 'open...'
+		print 'high'
+		sys.stdout.flush()
 		GPIO.output(RelayPin, GPIO.HIGH)
-		time.sleep(0.5)
 
 def destroy():
 	GPIO.output(RelayPin, GPIO.HIGH)

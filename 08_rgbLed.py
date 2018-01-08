@@ -17,9 +17,9 @@ def setup(Rpin, Gpin, Bpin):
 		GPIO.setup(pins[i], GPIO.OUT)   # Set pins' mode is output
 		GPIO.output(pins[i], GPIO.HIGH) # Set pins to high(+3.3V) to off led
 	
-	p_R = GPIO.PWM(pins['pin_R'], 2000)  # set Frequece to 2KHz
-	p_G = GPIO.PWM(pins['pin_G'], 1999)
-	p_B = GPIO.PWM(pins['pin_B'], 5000)
+	p_R = GPIO.PWM(pins['pin_R'], 2000)  # set frequency to 2KHz
+	p_G = GPIO.PWM(pins['pin_G'], 2000)
+	p_B = GPIO.PWM(pins['pin_B'], 2000)
 	
 	p_R.start(100)      # Initial duty Cycle = 100(leds off)
 	p_G.start(100)
